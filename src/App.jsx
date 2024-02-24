@@ -14,6 +14,7 @@ import Account from './components/Account';
 import Navbar from './components/Navbar';
 import ApparelList from './components/ApparelList';
 import NavbarB from './components/NavbarB';
+import Cart from './components/Cart';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
         <Route path="/apparellist" element={<ApparelList />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       </BrowserRouter>
   </div>

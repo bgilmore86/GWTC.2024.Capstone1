@@ -1,4 +1,4 @@
-//just showing navbar look when auth logged in account
+//showing navbar available when auth logged in account
 export default function NavbarB() {
     return (
         <nav className="navbar_b">

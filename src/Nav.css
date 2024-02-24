@@ -1,0 +1,13 @@
+nav {
+    background-color: slategrey;
+   
+}
+
+nav a {
+    color: black;
+}
+
+.navhome {
+    display: flex;
+    float: left;
+}

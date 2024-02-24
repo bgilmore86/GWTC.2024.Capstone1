@@ -21,7 +21,7 @@ export const apiSlice = createApi({
         method: "POST",
         body: registeredUser,
         headers: {
-          Authorization: "Bearer",
+          //Authorization:"Bearer",
         },
     }),
     }),

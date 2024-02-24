@@ -1,8 +1,10 @@
 
 
 function Login() {
+
   return(
     <container>
+      <div>
     <h2>Login Component</h2>
     <form>
       <label>
@@ -14,9 +16,10 @@ function Login() {
         <input type="password" />
       </label>
       <div>
-        <button type="submit">Enter</button>
+        <button type="submit">Enter Store</button>
       </div>
     </form>
+    </div>
     </container>
   )
 }
