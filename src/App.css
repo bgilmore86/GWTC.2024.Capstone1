@@ -5,14 +5,11 @@
   text-align: center;
 }
 
-img {
-  width: 600px;
 
-}
+
 
 .homerow {
   display: flex;
-  width: 100%;
 }
 
 h1 {
@@ -37,6 +34,16 @@ h4 {
 
 .homecolumn {
   flex: 33.33%;
-  padding: 5px;
+  padding: 0px;
+}
 
+img {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+
+.navbar_b {
+  background-color: darkblue;
+  color: lightblue;
 }

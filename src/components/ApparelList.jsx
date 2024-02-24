@@ -1,7 +1,7 @@
 
 function ApparelList() {
     return (
-        <div>ApparelList Component</div>
+        <div>Apparel List Component</div>
     )
     }
 export default ApparelList;

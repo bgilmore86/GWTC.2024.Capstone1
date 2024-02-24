@@ -20,8 +20,9 @@ export const apiSlice = createApi({
         url: "/auth/register",
         method: "POST",
         body: registeredUser,
-        //headers: {
-        //},
+        headers: {
+          Authorization: "Bearer",
+        },
     }),
     }),
   }),

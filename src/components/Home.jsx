@@ -1,5 +1,5 @@
 //importing photo for home page
-import home_travel from '../assets/travel_home.jpg';
+import travel from '../assets/travel.jpg';
 
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
         <h1>Bienvenidos(Welcome)</h1>
 
     <div className='homerow'>
-        <img src= {home_travel} />
+        <img src= {travel} />
 
     <div className='homecolumn'>
         
@@ -25,6 +25,10 @@ function Home() {
             saepe alias dolorem tenetur aperiam est iusto
             enim dolores? Vel quia laboriosam at animi
             excepturi ab, ipsam est magni.
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Numquam, sed quod suscipit id velit minus 
+            ratione sit vitae eius illum harum accusamus voluptas 
+            ad. Nostrum earum commodi labore placeat corporis.
         </h3>
 
         <h2>Explore the GWTC Store</h2>

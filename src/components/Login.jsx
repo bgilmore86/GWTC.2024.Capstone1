@@ -1,8 +1,8 @@
-import React from 'react';
+
 
 function Login() {
   return(
-    <section>
+    <container>
     <h2>Login Component</h2>
     <form>
       <label>
@@ -17,7 +17,7 @@ function Login() {
         <button type="submit">Enter</button>
       </div>
     </form>
-    </section>
+    </container>
   )
 }
 export default Login;
