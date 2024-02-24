@@ -3,9 +3,8 @@
 function Login() {
 
   return(
-    <container>
       <div>
-    <h2>Login Component</h2>
+        <h1>Login</h1>
     <form>
       <label>
         <p>Username</p>
@@ -20,7 +19,7 @@ function Login() {
       </div>
     </form>
     </div>
-    </container>
+
   )
 }
 export default Login;
