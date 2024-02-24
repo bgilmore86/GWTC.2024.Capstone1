@@ -1,10 +1,11 @@
+//importing photo for home page
 import home_travel from '../assets/travel_home.jpg';
+
 
 function Home() {
 
   return (
-    <secion>
-
+    <section>
         <h1>Bienvenidos(Welcome)</h1>
 
     <div className='homerow'>
@@ -37,6 +38,6 @@ function Home() {
     </div>
     </div>
 
-    </secion>
+    </section>
   )}
-export default Home
+export default Home;
