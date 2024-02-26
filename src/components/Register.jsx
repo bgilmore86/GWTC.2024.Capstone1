@@ -32,9 +32,9 @@ function Register() {
 
     return (
         <div>
-            <h5>Register Component</h5>
-            <h2>Create Account!
-            </h2>
+            <h1>Register Component</h1>
+            <h3>Create Account!
+            </h3>
             
             <form onSubmit={enterEventHandler}>
                 <label>

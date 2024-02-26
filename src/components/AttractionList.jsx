@@ -1,6 +1,6 @@
 //Attraction List component
 
-//importing photos I want to use
+//importing photos I want to use rough draft
 import pyr from '../assets/3pyramids.jpg';
 import colosseum from '../assets/colosseum.jpg';
 import eiffle from '../assets/eiffle.jpg';
@@ -21,43 +21,41 @@ function AttractionList() {
 
         <section>
             <div><h1>Attractions List Component</h1></div>
-            
-        <div className="rowA">
 
-            <div className="columnA">
+            <div>
                 <img className="three" src= {pyr} />
                 <h2>The 3 Pyramids</h2>
-                <p>GIZA, EGYPT</p>
+                <h3>GIZA, EGYPT</h3>
                 <button>More Info</button>
             </div>
 
-            <div className="columnA">
+            <div>
             <img className="coloss"src= {colosseum} />
             <h2>The Colosseum</h2>
             <p>Rome, Italy</p>
             <button>Take Me There...</button>
                 </div>
 
-            <div className="columnA">
+            <div>
             <img className="eiffle"src= {eiffle} />
             <h2>The Eiffel Tower</h2>
             <p>Paris, France</p>
             <button>Information</button>
             </div>
 
-            <div className="columnA">
+            <div>
             <img className="machu"src= {machu} />
             <h2>Machu Picchu</h2>
             <p>Cusco, Peru</p>
             </div>
 
-            <div className="columnA">
+            <div>
             <img className="opera"src= {opera} />
             <h2>The Opera House</h2>
             <p>Sydney, Australia</p>
             </div>
 
-            <div className="columnA">
+            <div>
             <img className="redeem" src= {redeem} />
             <h2>Christ the Redeemer</h2>
             <p>Rio De Janeiro, Brazil</p>
@@ -86,8 +84,8 @@ function AttractionList() {
             <h2>Leaning Tower of Pisa</h2>
             <p>Pisa, Italy</p>
             </div>
-        </div>
+       
         </section>
     )
 }
-export default AttractionList;
+export default AttractionList; 
