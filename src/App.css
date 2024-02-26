@@ -5,7 +5,12 @@
   text-align: center;
 }
 
-
+img {
+  display: inline-block;
+  width: 300px;
+  height: 150px;
+  padding: 50px;
+}
 
 
 .homerow {
@@ -37,14 +42,11 @@ h4 {
   padding: 0px;
 }
 
-img {
-  width: 50%;
-  height: auto;
-  float: left;
+.travel_home {
+  display: flex;
+  width: 650px;
+  height: 325px;
 }
 
-.navbar_b {
-  background-color: brown;
-}
 
 

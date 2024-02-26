@@ -6,9 +6,9 @@ export default function Navbar() {
             <a href="/">Home</a>
             <a href="/login">Login</a>
             <a href="/register">Register</a>
-            <a href="/apparellist">Apparel</a>
+            <a href="/attractionlist">Attractions</a>
             <a href="/cart">Cart</a>
-            <a href="/contactus">Contact</a>
+            <a href="/aboutus">Contact Us Now!</a>
             </h2>
         </nav>
     );

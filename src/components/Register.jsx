@@ -26,51 +26,72 @@ function Register() {
     const userInfoEntered = (e) => {
         setUserInfo({...userInfo, [e.target.name]: e.target.value});
             console.log(userInfo.username);
-            console.log(e.target.name, e.target.value);
+            //console.log(e.target.name, e.target.value);
          //console.log(JSON.stringify(userInfo));
     };
 
-
     return (
         <div>
-            <h1>Create Account!
-                <p>Come Shop With Us...</p>
-            </h1>
+            <h5>Register Component</h5>
+            <h2>Create Account!
+            </h2>
+            
             <form onSubmit={enterEventHandler}>
-
                 <label>
                     USERNAME
-                <input name="username" type="text" placeholder="USERNAME"
-                value={userInfo.username} onChange={userInfoEntered}/>
+                        <input 
+                        name="username"
+                        type="text"
+                        placeholder="USERNAME"
+                        value={userInfo.username}
+                        onChange={userInfoEntered}/>
                 </label>
 
                 <label>
                     PASSWORD
-                <input name="password" type="password" placeholder="PASSWORD"
-                value={userInfo.password} onChange={userInfoEntered}/>
+                        <input
+                        name="password"
+                        type="password"
+                        placeholder="PASSWORD"
+                        value={userInfo.password}
+                        onChange={userInfoEntered}/>
                 </label>
 
                 <label>
                     EMAIL
-                    <input name="email" type="email" placeholder="EMAIL"
-                    value={userInfo.email} onChange={userInfoEntered}/>
+                        <input
+                    name="text"
+                    type="email"
+                    placeholder="EMAIL"
+                   defaultValue={userInfo.email}
+                    onChange={userInfoEntered}/>
                 </label>
 
                 <label>
                     FIRSTNAME
-                    <input name="firstname" type="text" placeholder="FIRSTNAME"
-                    value={userInfo.firstname} onChange={userInfoEntered}/>
+                    <input
+                    name="firstname"
+                    type="text"
+                    placeholder="FIRSTNAME"
+                    value={userInfo.firstname}
+                    onChange={userInfoEntered}/>
                     </label>
                 
                 <label>
                     LASTNAME
-                    <input name="lastname" type="text" placeholder="LASTAME"
-                    value={userInfo.lastname} onChange={userInfoEntered}/>
+                    <input
+                    name="lastname"
+                    type="text"
+                    placeholder="LASTNAME"
+                    value={userInfo.lastname}
+                    onChange={userInfoEntered}/>
                     </label>
-
                 <button>ENTER</button>
-                
             </form>
+            
+            <h3>Already have an account?</h3>
+            <button>LOGIN</button>
+            
         </div>
         )}
 
