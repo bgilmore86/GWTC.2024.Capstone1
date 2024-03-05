@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function MainProducts({ products, onAdd }) {
 
   return (
-    <main className="block col-2">
+    <div>
       <h2>Products</h2>
       <div className="row">
         {products.map(product => (
@@ -16,7 +16,7 @@ function MainProducts({ products, onAdd }) {
           />
         ))}
       </div>
-    </main>
+    </div>
   );
 
 }

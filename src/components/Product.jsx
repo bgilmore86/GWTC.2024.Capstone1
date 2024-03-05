@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
 export default function Product(props) {
@@ -14,6 +14,7 @@ export default function Product(props) {
     </div>
   );
 }
+
 Product.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,

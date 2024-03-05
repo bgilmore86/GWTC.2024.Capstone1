@@ -9,7 +9,7 @@ import Photography from './components/Photography';
 import AboutUs from './components/AboutUs';
 
 import Navbar from './components/Navbar';
-import NavbarB from './components/NavbarB';
+
 
 import MainProducts from './components/MainProducts';
 import Cart from './components/Cart';
@@ -32,7 +32,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavbarB />
       <Navbar />
 
       <Routes>
