@@ -1,13 +1,15 @@
-nav {
-    background-color: darkslategray;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
    
 }
 
-nav a {
-    color: goldenrod;
+.navbarA {
+    display: flex;
+    justify-content:right;
+    justify-content: space-evenly;
+    background-color: black;
+
 }
 
-.navhome {
-    display: flex;
-    float: left;
-}

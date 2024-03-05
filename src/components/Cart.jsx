@@ -1,40 +1,35 @@
-import React from 'react';
+// Cart.js
+import React, { useState } from "react";
 
-import PropTypes from 'prop-types';
+const Cart = () => {
+  // Initialize cart items state
+  const [cartItems, setCartItems] = useState([]);
 
+  // Function to add an item to the cart
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
 
-    const Cart= ({cartItems}) => {
-        return (
-            <div className="cart-items">
-                <h1>Cart Component</h1>
-                {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
-                <img src={item.image} />
-                <h3>{item.name}</h3>
-                <p>{item.price}</p>
-            </div>
+  // Function to remove an item from the cart
+  const removeFromCart = (item) => {
+    const updatedCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+    setCartItems(updatedCart);
+  };
+
+  return (
+    <div className="cart">
+      <h2>Shopping Cart</h2>
+      <ul>
+        {cartItems.map((item) => (
+          <li key={item.id}>
+            {item.name} - ${item.price}
+            <button onClick={() => addToCart(item)}>Add to Cart</button>
+            <button onClick={() => removeFromCart(item)}>Remove</button>
+          </li>
         ))}
-        <p>Total: ${calculateTotal(cartItems)}</p>
-        <button>Checkout Now</button>
-
+      </ul>
     </div>
-        );
-                };
-
-        //fn calculate total
-        const calculateTotal = (cartItems) => {
-            return cartItems.reduce((total, item) => 
-            total + item.price, 0);
-        };
-Cart.propTypes ={
-    cartItems: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-        })
-    ).isRequired,
+  );
 };
 
 export default Cart;

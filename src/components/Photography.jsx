@@ -13,14 +13,14 @@ import wall from '../assets/wall.jpg';
 import pisa from '../assets/pisa.jpg';
 
 
-function AttractionList() {
+function Photography() {
     
     return (
 
 
 
         <section>
-            <div><h1>Attractions List Component</h1></div>
+            <div><h1>Travel Photography</h1></div>
 
             <div>
                 <img className="three" src= {pyr} />
@@ -50,7 +50,7 @@ function AttractionList() {
             </div>
 
             <div>
-            <img className="opera"src= {opera} />
+            <img className="opera"src= {opera}/>
             <h2>The Opera House</h2>
             <p>Sydney, Australia</p>
             </div>
@@ -88,4 +88,4 @@ function AttractionList() {
         </section>
     )
 }
-export default AttractionList; 
+export default Photography; 

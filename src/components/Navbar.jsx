@@ -1,14 +1,12 @@
 //Navbar
 export default function Navbar() {
     return (
-        <nav className="navbar_a">
+        <nav className="navbarA">
             <h2>
             <a href="/">Home</a>
             <a href="/login">Login</a>
-            <a href="/register">Register</a>
-            <a href="/attractionlist">Attractions</a>
-            <a href="/cart">Cart</a>
-            <a href="/aboutus">Contact Us Now!</a>
+            <a href="/photography">Photography</a>
+            <a href="/aboutus">Contact</a>
             </h2>
         </nav>
     );

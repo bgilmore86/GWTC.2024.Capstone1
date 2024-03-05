@@ -1,12 +1,10 @@
-//showing navbar available when auth logged in account
+//showing navbar with other routes available
 export default function NavbarB() {
     return (
-        <nav className="navbar_b">
-            <a href="/">Home</a>
-            <a href="/productlist">Products</a>
+        <nav className="navbarB">
+            <a href="/mainproducts">Art for Sale</a>
             <a href="/account">Account</a>
-            <a href="/cart">Cart</a>
-            <a href="/contactus">Contact</a>
+            <a href="/bag">Bag</a>
         </nav>
     );
 }

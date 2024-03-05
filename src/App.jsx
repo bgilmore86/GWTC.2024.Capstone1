@@ -1,72 +1,51 @@
-import React from "react";
-import { useState } from "react";
+// Imports
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//importing components into App
+import Home from './components/Home';
+import Login from './components/Login';
+import Account from './components/Account';
+import Photography from './components/Photography';
+import AboutUs from './components/AboutUs';
 
-//importing browser router for route endpoints
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import NavbarB from './components/NavbarB';
 
-//importing app styling
-import "./Nav.css";
-import "./App.css";
+import MainProducts from './components/MainProducts';
+import Cart from './components/Cart';
 
-import "./ProductList.css";
+//List styling
+import "./List.css";
 
-//import components
-import Home from "./components/Home";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Account from "./components/Account";
-
-import AttractionList from "./components/AttractionList";
-import Cart from "./components/Cart";
-import AboutUs from "./components/AboutUs";
-
-import ProductList from "./components/ProductList";
-
-
-import Navbar from "./components/Navbar";
-import NavbarB from "./components/NavbarB";
-
-
-//import photos?
-
-
+// App component
 function App() {
-  const [products] = useState([
-    {
-      id: 1,
-      name: "Stonehenge",
-      price: 29.99,
-      image: "stonehenge.jpg",
-      description:"description goes here",
-    },
-    //add more products here...
-  ]);
-//define functions for main app
+
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  }
 
-  //route paths to elements & nest navbar a/b to show diff routes/endpoints :: rough draft
+  const removeFromCart = (item) => {
+    setCartItems(cartItems.filter(i => i.id !== item.id));
+  }
+
   return (
-    <div className="app">
+    <BrowserRouter>
       <NavbarB />
       <Navbar />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/attractionlist" element={<AttractionList />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
-          <Route path="/productlist" element={<ProductList products={products} addToCart={addToCart} />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/photography" element={<Photography />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} onAdd={addToCart} onRemove={removeFromCart} />
+          } />
+        <Route path="/mainproducts" element={<MainProducts/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
