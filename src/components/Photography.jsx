@@ -1,4 +1,4 @@
-//Attraction List component
+//Photography component
 
 //importing photos I want to use rough draft
 import pyr from '../assets/3pyramids.jpg';
@@ -12,7 +12,7 @@ import stone from '../assets/stone.jpg';
 import wall from '../assets/wall.jpg';
 import pisa from '../assets/pisa.jpg';
 
-
+import Cart from "./Cart";
 function Photography() {
     
     return (
@@ -20,6 +20,7 @@ function Photography() {
 
 
         <section>
+            <div><Cart/></div>
             <div><h1>Travel Photography</h1></div>
 
             <div>
