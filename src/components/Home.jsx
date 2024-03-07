@@ -12,7 +12,7 @@ function Home() {
         <h1>Bienvenidos(Welcome)</h1>
 
     <div className='homerow'>
-        <img className="travel_home"src= {travel} />
+        <img className="travel"src= {travel} style={{ float: 'left', marginRight: '20px'}} />
 
     <div>
         

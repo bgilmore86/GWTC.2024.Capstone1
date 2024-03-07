@@ -13,7 +13,7 @@ import Navbar from './components/Navbar';
 
 import MainProducts from './components/MainProducts';
 import Cart from './components/Cart';
-
+import Book from './components/Book';
 //List styling
 import "./List.css";
 
@@ -43,6 +43,7 @@ function App() {
         <Route path="/cart" element={<Cart cartItems={cartItems} onAdd={addToCart} onRemove={removeFromCart} />
           } />
         <Route path="/mainproducts" element={<MainProducts/>} />
+        <Route path="/book" element={<Book/>}/>
       </Routes>
     </BrowserRouter>
   );
