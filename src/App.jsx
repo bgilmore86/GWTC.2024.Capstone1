@@ -1,52 +1,40 @@
-// Imports
-import { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 //importing components into App
+import { LoginButton } from './components/LoginButton';
 import Home from './components/Home';
 import Login from './components/Login';
-import Account from './components/Account';
-import Photography from './components/Photography';
 import AboutUs from './components/AboutUs';
-
 import Navbar from './components/Navbar';
 
-
-import MainProducts from './components/MainProducts';
+import Products from './components/Products';
 import Cart from './components/Cart';
-import Book from './components/Book';
-//List styling
-import "./List.css";
+import ProductDetails from './components/ProductDetails';
+import Checkout from './components/Checkout';
 
-// App component
-function App() {
+//styling
+import "./Nav.css";
 
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
-  }
-
-  const removeFromCart = (item) => {
-    setCartItems(cartItems.filter(i => i.id !== item.id));
-  }
-
-  return (
+  
+  function App() {
+    return (
     <BrowserRouter>
       <Navbar />
+      <LoginButton />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/photography" element={<Photography />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} onAdd={addToCart} onRemove={removeFromCart} />
-          } />
-        <Route path="/mainproducts" element={<MainProducts/>} />
-        <Route path="/book" element={<Book/>}/>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
+  
   );
-}
+    }
 
 export default App;

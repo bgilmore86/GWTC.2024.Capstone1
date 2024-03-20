@@ -2,8 +2,6 @@
 import travel from '../assets/travel.jpg';
 
 
-
-
 function Home() {
 
   return (
@@ -20,7 +18,7 @@ function Home() {
         <h3>Welcome to the Global Wonders Traveler App. Whether you are traveling solo
             or with family and friends, we can show you some major tourist attractions
             from around the world. Get started planning your next trip today! Visit our
-            store to see our brilliant photograpy!
+            store to pick up some items before your trip!
         </h3>
 
 

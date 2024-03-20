@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 
-import {useLoginMutation} from "../redux/apiSlice"
+import {useLoginMutation} from "../redux/api"
 
 function Login() {
 
@@ -15,14 +15,15 @@ function Login() {
         login(username, password);
         e.preventDefault();
         console.log("Login  button clicked", `{username}`);
-    };
+        window.location.href = '/products';
+      };
 
   
 
 
   return(
       <div>
-        <h1>Login Component</h1>
+        <h1>Login</h1>
 
     <form>
 

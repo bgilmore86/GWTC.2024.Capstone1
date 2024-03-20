@@ -1,18 +1,18 @@
 // Data.js
-const photoData = [
+const photosData = [
     {
         id: "1",
         name: "Stonehenge",
         price: 49.99,
-        category: "Photography",
-        description: "Stonehenge landscape photo",
+        category: "England",
+        description: "Stonehenge",
         image: "assets/stone.jpg"
     },
     {
         id: "2",
         name: "Opera House",
         price: 30.99,
-        category: "Photography",
+        category: "Australia",
         description: "Sydney Opera House",
         image: "assets/opera.jpg"
     },
@@ -20,12 +20,12 @@ const photoData = [
         id: "3",
         name: "Machu Picchu",
         price: 50.00,
-        category: "Art",
+        category: "Peru",
         description: "Machu Picchu ruins",
         image: "assets/machu.jpg"
     },
     
 ];
 
-// Export the array so that other files can use it
-export default photoData;
+
+export default photosData;
