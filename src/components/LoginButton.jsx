@@ -10,7 +10,7 @@ export function LoginButton() {
       //await auth.login('mor_2314', '83r5^_');
       
       // Redirect to store home page on success
-      window.location.href = '/photography';
+      window.location.href = '/products';
     } catch (err) {
       // Show error message
       console.error(err);
