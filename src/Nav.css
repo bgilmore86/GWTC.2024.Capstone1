@@ -1,4 +1,13 @@
 .navbar {
-    color: gold;
-  background-color: black;
-  }
+  color: gold;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+.navbar a {
+  display: inline;
+  margin: 0 3px;
+  font-size: 22px;
+  padding: 22px;
+}

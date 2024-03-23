@@ -1,20 +1,25 @@
-// loginbutton.js
-//import { useAuth } from './auth';
+import { useAuth } from "../auth";
 
 export function LoginButton() {
-  //const auth = useAuth();
+  const { isAuthenticated, login, logout } = useAuth();
+
+  if (isAuthenticated) {
+    return <button onClick={logout}>Logout</button>;
+  } else {
+    return <button onClick={handleLogin}>Login</button>;
+  }
 
   async function handleLogin() {
     try {
+      //login logic
+      await login("mor_2314", "83r5^_");
 
-      //await auth.login('mor_2314', '83r5^_');
-      
-      // Redirect to store home page on success
-      window.location.href = '/login';
+      // Redirect to lgoin page
+      window.location.href = "/login";
     } catch (err) {
       // Show error message
       console.error(err);
     }
   }
-  return<button onClick={handleLogin}>Login</button>;
 }
+export default LoginButton;

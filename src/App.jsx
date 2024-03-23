@@ -1,24 +1,19 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import AttractionList from "./pages/AttractionList";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import AboutUs from "./pages/AboutUs";
+import Checkout from "./pages/Checkout";
+import LoginButton from "./components/LoginButton";
+import './Nav.css';
 
-//importing components into App
-import { LoginButton } from './components/LoginButton';
-import Home from './components/Home';
-import Login from './components/Login';
-import AboutUs from './components/AboutUs';
-import Navbar from './components/Navbar';
 
-import Products from './components/Products';
-import Cart from './components/Cart';
-import ProductDetails from './components/ProductDetails';
-import Checkout from './components/Checkout';
-
-//styling
-import "./Nav.css";
-
-  
-  function App() {
-    return (
+function App() {
+  return (
     <BrowserRouter>
       <Navbar />
       <LoginButton />
@@ -26,15 +21,15 @@ import "./Nav.css";
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/attractions" element={<AttractionList />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/productdetails" element={<ProductDetails />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
-  
   );
-    }
+}
 
 export default App;

@@ -1,4 +1,4 @@
-// cartSlice.js
+// cartSlice.js component
 
 import { createSlice } from '@reduxjs/toolkit';
 

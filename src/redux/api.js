@@ -8,7 +8,6 @@ export const apiSlice = createApi({
     baseUrl: "https://fakestoreapi.com",
   }),
 
-  //authenticated login
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (registeredUser) => ({
@@ -17,34 +16,53 @@ export const apiSlice = createApi({
         body: registeredUser,
       }),
     }),
-    //gettingAll products
+
+    // Defining endpoints to be used in app
+
+    //getting All products
     getProducts: builder.query({
       query: () => "/products",
     }),
-  }),
 
-  // Cart operations
-  
-      addToCart: (product) => ({
-        url: '/cart/add',
-        method: 'PUT',
+    getProduct: builder.query({
+      query: (id) => `/products/${id}`,
+    }),
+
+    //get all carts
+    getCarts: builder.query({
+      query: () => "/carts",
+    }),
+
+    // Cart operations
+    addToCart: builder.mutation({
+      query: (product) => ({
+        url: "/carts/add",
+        method: "PUT",
         body: product,
       }),
-      removeFromCart: (productId) => ({
-        url: '/cart/remove',
-        method: 'DELETE',
-        body: { productId },
+    }),
+    removeFromCart: builder.mutation({
+      query: (productId) => ({
+        url: `/carts/remove/${productId}`,
+        method: "DELETE",
       }),
-    },
-);
+    }),
+    removeAllFromCart: builder.mutation({
+      query: () => ({
+        url: "/carts/removeAll",
+        method: "DELETE",
+      }),
+    }),
+  }),
+});
 
-
-
-// Export hooks for usage in functional components
+// Export hooks for use in functional components
 export const {
-useLoginMutation,
-useGetProductsQuery,
-useAddToCart,
-useRemoveFromCart
-
+  useLoginMutation,
+  useGetProductsQuery,
+  useGetProductQuery,
+  useGetCartsQuery,
+  useAddToCartMutation,
+  useRemoveFromCartMutation,
+  useRemoveAllFromCartMutation,
 } = apiSlice;
