@@ -1,13 +1,14 @@
 .navbar {
   color: gold;
-  display: flex;
   justify-content: space-between;
+  justify-content: space-evenly;
+  justify-content: space-around;
   float: right;
 }
 
 .navbar a {
-  display: inline;
+  display: inline-flex;
   margin: 0 3px;
-  font-size: 22px;
-  padding: 22px;
+  font-size: 20px;
+  padding: 20px;
 }

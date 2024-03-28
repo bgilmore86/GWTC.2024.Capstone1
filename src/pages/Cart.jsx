@@ -1,52 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
-import CartItems from "../components/CartItems";
+import { useGetCartQuery } from '../redux/api';
+import {Link} from 'react-router-dom';
 
-const ShoppingCart = ({ cartItems, onIncreaseQuantity, onDecreaseQuantity }) => {
-  let content;
+export default function Cart() {
 
-  try {
-    content = (
-      <div className="shopping-cart">
-        <h2>Shopping Cart</h2>
-        <ul>
-          {cartItems.map(item => (
-            <CartItems
-              key={item.id}
-              {...item}
-              onIncrease={() => onIncreaseQuantity(item.id)}
-              onDecrease={() => onDecreaseQuantity(item.id)}
-            />
-          ))}
-        </ul>
-        <div>
-          <span>Total: ${getTotalPrice().toFixed(2)}</span>
+  const { data, isLoading } = useGetCartQuery();
+
+  if (isLoading) return <p>Loading...</p> 
+
+  return (
+    <>
+      <h2>Cart</h2>
+
+      {data.map(item => (
+        <div key={item.id}>
+          {item.title} - ${item.price}  
         </div>
-      </div>
-    );
-  } catch (error) {
-    content = <div>Oops, something went wrong!</div>;
-  }
+      ))}
 
-  return content;
-
-  function getTotalPrice() {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  }
-};
-
-// Use PropTypes --validation
-ShoppingCart.propTypes = {
-  cartItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      quantity: PropTypes.number.isRequired,
-    })
+      <Link to="/checkout">
+        <button>Checkout</button>  
+      </Link>
+    </>
   )
-};
-
-export default ShoppingCart;
-
-
+}

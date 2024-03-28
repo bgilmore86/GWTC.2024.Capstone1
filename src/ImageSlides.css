@@ -1,0 +1,17 @@
+/* src/ImageSlides.css */
+.slider {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .slider .slick-dots {
+    bottom: -30px;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  

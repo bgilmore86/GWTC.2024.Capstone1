@@ -1,19 +1,35 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import peace from '../assets/peace.jpg';
 
 function Checkout() {
-  const [hover, setHover] = useState(false);
+  const [hoverText, setHoverText] = useState('Goodbye');
+
+  const handleMouseEnter = () => {
+    setHoverText('Arrivederci');
+  };
+  
+  const handleMouseLeave = () => {
+    setHoverText('Goodbye');
+  };
 
   return (
     <section>
-      <div
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
-        <h3>Checkout Component</h3>
-        <p>...where the customer will checkout</p>
+      <h1>
+        <span
+          onMouseEnter={handleMouseEnter}  
+          onMouseLeave={handleMouseLeave}
+        >
+          {hoverText}
+        </span>
+      </h1>
+      
+      <div>
+        <img
+          className="peace"
+          src={peace}
+          style={{ float: "center", marginRight: "20px" }} 
+        />
       </div>
-      <h1>{hover ? "Arrivederci!" : "GoodBye!"}</h1>
     </section>
   );
 }

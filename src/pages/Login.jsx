@@ -1,56 +1,46 @@
-
-import {useState} from 'react';
-
-import {useLoginMutation} from "../redux/api"
+// Login.js
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {useLoginMutation} from '../redux/api';
 
 function Login() {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [login, { isLoading, isError, error }] = useLoginMutation();
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const [login] = useLoginMutation();
+  const handleSubmit = async e => {
+    e.preventDefault();
 
-    const handleLogin = (e)  => {
-        login(username, password);
-        e.preventDefault();
-        console.log("Login  button clicked", `{username}`);
-        window.location.href = '/products';
-      };
+    try {
+      await login({ username, password }).unwrap();
+      navigate('/products');
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
-  
+  return (
+    <form onSubmit={handleSubmit}>
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>{error.data}</p>}
 
-
-  return(
-      <div>
-        <h1>Login</h1>
-
-    <form>
-
-      <label>
-        <p>Username</p>
       <input 
-        type="text" 
-        placeholder="USERNAME"
         value={username}
-        onChange={(e)=> setUsername(e.target.value)} />
-      </label>
+        onChange={e => setUsername(e.target.value)}
+      />
 
-      <label>
-        <p>Password</p>
-      <input
+      <input 
         type="password"
-        placeholder="PASSWORD"
         value={password}
-        onChange={(e)=> setPassword(e.target.value)} />
-      </label>
-      
-      <div>
-        <button onClick={handleLogin}>Enter Store</button>
-      </div>
-    </form>
-    </div>
+        onChange={e => setPassword(e.target.value)} 
+      />
 
-  );
+      <button type="submit">Login</button>
+    </form>
+  )
 }
+
 export default Login;

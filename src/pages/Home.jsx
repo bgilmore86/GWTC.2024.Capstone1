@@ -14,7 +14,7 @@ function Home() {
       </h1>
 
       <div className="homerow">
-        <img className="travel" src={travel} style={{ float: "left", marginRight: "20px" }} />
+        <img className="travel" src={travel} style={{ float: "left", marginRight: "50px" }} />
 
         <div>
           <h1>Global Wonders Travel Company</h1>

@@ -1,35 +1,87 @@
-import React, {useState} from "react";
-import { useGetProductsQuery } from "../redux/api";
-import { Link } from "react-router-dom";
-import "../Products.css";
-//import SearchBar from '../components/SearchBar';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../Products.css';
+
+
 
 const Products = () => {
-  const { data, isLoading, error } = useGetProductsQuery();
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [categories, setCategories] = useState([]);
 
-  if (isLoading) return <p>Loading Store Please Wait...</p>;
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('https://fakestoreapi.com/products');
+      const data = await response.json();
 
-  if (error) return <p>Error Fetching Products: {error.message}</p>;
-  
+      console.log('Done FETCHING  PRODUCTS from API...', data);
+      setProducts(data);
+    }
+
+    const fetchCategories = async () => {
+      const response = await fetch('https://fakestoreapi.com/products/categories');
+      const data = await response.json();
+
+      console.log('Done FETCHING CATEGORIES from API', data);
+      setCategories(data);
+    }
+
+    fetchProducts();
+    fetchCategories();
+  }, []);
+
+  console.log('Products Rendered Successfully', products);
+
+  console.log('Categories Rendered Successfully', categories);
+
+  const handleSearch = (event) => {
+    console.log('Searching for:', event.target.value);
+    setSearchTerm(event.target.value);
+
+    setSearchTerm(event.target.value);
+  }
+
+  const filteredProducts = products.filter(product => 
+    product.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <section>
-    <h2>Travel Store</h2>
-    <div className="products">
-      {/* <SearchBar/> */}
-      {data.map((product) => (
-        <Link to={`/product/${product.id}`} key={product.id} className="product-link">
-          <div className="product">
-            <h3 className="product-name">{product.name}</h3>
-            <img src={product.image} alt={product.title} width="200" height="200" />
-            <p className="product-price">Price: ${product.price}</p>
+    <div>
+      <h2>Products</h2>
+      <select value={searchTerm} onChange={handleSearch}>
+        <option value="">All Categories</option>
+        {categories.map(category =>(
+          <option key={category} value={category}>
+          {category}
+          </option>
+        ))}
+      </select>
+    
+
+      <input 
+        type="text"
+        placeholder="Search by category"
+        value={searchTerm}
+        onChange={handleSearch} 
+      />
+
+      <div className="products">
+        {filteredProducts.map(product => (
+          <div key={product.id} className="product">
+            <Link to={`/product/${product.id}`}>
+              <h3>{product.title}</h3>
+            </Link>
+            
+            <img src={product.image} alt={product.title} width="222" height="222"/>
+            
+            <p>${product.price}</p>
           </div>
-        </Link>
-      ))}
+        ))}
+      </div>
     </div>
-    </section>
   );
-};
+}
+
+
 
 export default Products;
-
