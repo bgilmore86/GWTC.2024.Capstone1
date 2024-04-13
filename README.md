@@ -11,6 +11,7 @@ Store: This page will request login upon arrival and show the user products from
 Cart: This is where I attempted to fetch the FakeStoreAPi endpoint '/carts/3' for user#3 cart; however, unable to finish; this page will show a dummy render of a product in "cart page" with associated buttons, to simulate api cart received data.
 
 Contact: This link will take the user to the About Page of the company's app, and will contain contacting details.
+<<<<<<< HEAD
 
 Checkout: This is the page once selecting checkout in the cart page that the user will complete their shopping; containing card processing functionality, eventually, and have a farewell as well.
 
