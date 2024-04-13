@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ImageSlides from '../data/ImageSlides';
 
 function AttractionList() {
