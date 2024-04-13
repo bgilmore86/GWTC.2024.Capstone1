@@ -1,11 +1,13 @@
 import { useState } from "react";
 import travel from "../assets/travel.jpg";
 
+
 function Home() {
   const [hover, setHover] = useState(false);
 
   return (
     <section>
+
       <h1
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -17,6 +19,7 @@ function Home() {
         <img className="travel" src={travel} style={{ float: "left", marginRight: "50px" }} />
 
         <div>
+          
           <h1>Global Wonders Travel Company</h1>
           <h3>
             Welcome to the Global Wonders Traveler App. Whether you are traveling solo

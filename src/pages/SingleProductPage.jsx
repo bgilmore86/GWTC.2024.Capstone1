@@ -1,18 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cartSlice } from '../redux/store';
 import { useGetCartQuery } from '../redux/api';
 import '../SingleProduct.css';
-import { Link } from 'react-router-dom';
-//import {removeFromCartMutation} from '../redux/api';
-
-
-
 
 
 export default function SingleProductPage() {
-
   const { productId } = useParams();
   const dispatch = useDispatch();
 
@@ -20,12 +14,11 @@ export default function SingleProductPage() {
   const [loading, setLoading] = useState(true);
 
   const { data: apiCartData, isLoading: cartLoading } = useGetCartQuery();
-  console.log(apiCartData); // im adding this line to log apiCartData to t/s cart
+  console.log(apiCartData);
 
   const apiCart = apiCartData?.items || [];
 
   useEffect(() => {
-
     const fetchProduct = async () => {
       setLoading(true);
       try {
@@ -38,61 +31,54 @@ export default function SingleProductPage() {
     };
     //fetch product
     fetchProduct();
-},[productId]);
+  }, [productId]);
 
   const addToCart = () => {
     dispatch(cartSlice.actions.addToCart(product));
   }
-//addtocart mutation api implementation
-  //const removeFromCartMutation = async () => {
-    //await removeFromCartMutation({id: product.id}).unwrap();
-  //}
 
-//display while loading single product page view
+  //display while loading single product page view product
   if (loading || cartLoading) return <p>Loading...</p>;
 
   if (product) {
     const { 
-        id, 
-        title, 
-        price, 
-        category, 
-        description, 
-        image 
+      id, 
+      title, 
+      price, 
+      category, 
+      description, 
+      image 
     } = product;
 
     const isInCart = apiCart.some(item => item.id === id);
 
     return (
-    <section>
-      <div className="products">
-        <div>
-
-          <h3>{title}</h3>
-          <p>{description}</p>
+      <section>
+        <div className="products">
+          <div>
+            <h2>Travel Gift Shop</h2>
+            <h3>{title}</h3>
+            <p>{description}</p>
             <img src={image} alt={product.title} width="333" height="333"/>
             <p>Price: ${price}</p>
-
             <p>Category: {category}</p>
-        </div>
+          </div>
         </div>
 
-    
         <button onClick={addToCart}>
           {isInCart ? 'In Cart' : 'Add to Cart'} 
         </button>
 
-        {/* <button onClick={removeFromCartHandler}> Remove from Cart</button> */}
-
-      <div>
-        <Link to="/cart/1">
-          <button>Cart</button> 
-        </Link>
+        <div>
+          <Link to="/cart/1">
+            <button>Cart</button>
+          </Link>
+          <Link to="/checkout">
+            <button>Checkout</button>
+          </Link>
         </div>
-
-        </section>
+      </section>
     )
-
   }
 
   return null;

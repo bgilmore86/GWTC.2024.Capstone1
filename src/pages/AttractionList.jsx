@@ -6,7 +6,7 @@ function AttractionList() {
   return (
     <section>
     <div>
-      <h3>Where we take you...</h3>
+      <h3>Main Attractions</h3>
       <ImageSlides />
     </div>
     </section>

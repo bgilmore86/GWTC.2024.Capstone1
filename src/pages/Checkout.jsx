@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import peace from '../assets/peace.jpg';
+import { useLocation } from 'react-router-dom';
+
 
 function Checkout() {
   const [hoverText, setHoverText] = useState('Goodbye');
@@ -11,7 +13,12 @@ function Checkout() {
   const handleMouseLeave = () => {
     setHoverText('Goodbye');
   };
-
+  
+  const location = useLocation();
+  const data = location.state;
+  
+  console.log('Data received from Cart Routed page:', data);
+  
   return (
     <section>
       <h1>
